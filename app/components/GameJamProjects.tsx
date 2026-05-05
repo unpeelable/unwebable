@@ -10,26 +10,26 @@ import { Gamepad2, X, ExternalLink } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Proje 1",
-    description: "Bir GameJam projesi açıklaması. Buraya projenin kısa tanımını yazın.",
+    title: "Darboğaz",
+    description: "Minigameler ve geliştirme yaptığınız bir gamejam projesi.",
     image: "/projects/project1.png",
-    tags: ["Godot", "2D", "Puzzle"],
-    link: "#", // itch.io veya GitHub linki
+    tags: ["Godot", "2D", "Puzzle", "Minigame"],
+    link: "https://itch.io/jam/kbu-game-jam-2026-bahar/rate/4518572", // itch.io veya GitHub linki
   },
   {
     id: 2,
-    title: "Proje 2",
-    description: "Bir GameJam projesi açıklaması. Buraya projenin kısa tanımını yazın.",
+    title: "Yakında...",
+    description: "...",
     image: "/projects/project2.png",
-    tags: ["Godot", "3D", "Action"],
+    tags: ["Unity", "3D", "Action"],
     link: "#",
   },
   {
     id: 3,
-    title: "Proje 3",
-    description: "Bir GameJam projesi açıklaması. Buraya projenin kısa tanımını yazın.",
-    image: "/projects/project3.png",
-    tags: ["Unity", "2D", "Platformer"],
+    title: "Yakında...",
+    description: "...",
+    image: "/projects/project2.png",
+    tags: ["..."],
     link: "#",
   },
 ];
@@ -100,7 +100,7 @@ export function GameJamModal({
           <div className="flex items-center gap-3">
             <Gamepad2 size={24} className="text-emerald-500" />
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">
-              GameJam Projeleri
+              Oyun ve GameJam Projeleri
             </h2>
           </div>
           <button
