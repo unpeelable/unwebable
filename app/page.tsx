@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { Music, Code2 } from "lucide-react";
 import GameJamSection from "@/app/components/GameJamSection";
+import Gallery from "@/app/components/Gallery";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 p-6 sm:p-12 font-sans selection:bg-blue-500 selection:text-white relative">
       {/* Arka Plan Görseli — /public/bg.jpg dosyasını koyunca görünecek */}
       <div
-        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-15 dark:opacity-10 pointer-events-none"
+        className="fixed inset-0 z-0 bg-contain bg-center bg-no-repeat opacity-25 dark:opacity-15 pointer-events-none"
         style={{ backgroundImage: "url('/bg.jpg')" }}
       />
       {/* Container */}
@@ -98,6 +99,31 @@ export default function Home() {
 
         {/* GameJam Projeleri Kartı + Modal */}
         <GameJamSection />
+
+        {/* YouTube Video Kartı (3 Sütun - Tam Genişlik) */}
+        <div className="md:col-span-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 rounded-3xl">
+          <div className="flex items-center gap-3 mb-4 px-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-red-500">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            <h2 className="text-xl font-bold text-zinc-900 dark:text-white">YouTube</h2>
+          </div>
+          <div className="rounded-2xl overflow-hidden w-full aspect-video">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/xnLm29ucvkk?start=193"
+              title="YouTube video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Galeri — Otomatik Kayan Görseller */}
+        <Gallery />
 
       </main>
     </div>
