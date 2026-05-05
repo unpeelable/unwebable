@@ -68,5 +68,20 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 75s linear infinite;
+}
+
+/* Soldan Sağa Kayan Marquee Animasyonu */
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 75s linear infinite;
 }

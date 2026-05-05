@@ -133,15 +133,7 @@ export function GameJamModal({
                     target.style.display = "none";
                   }}
                 />
-                {/* Görsel yoksa placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center text-zinc-400 dark:text-zinc-500">
-                  <div className="text-center">
-                    <Gamepad2 size={48} className="mx-auto mb-2 opacity-30" />
-                    <p className="text-sm opacity-50">
-                      /public{project.image}
-                    </p>
-                  </div>
-                </div>
+
               </div>
 
               {/* Proje Bilgileri */}
