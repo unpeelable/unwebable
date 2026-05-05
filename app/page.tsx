@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Music, Gamepad2, Code2 } from "lucide-react";
+import { Music, Code2 } from "lucide-react";
+import GameJamSection from "@/app/components/GameJamSection";
 
 export default function Home() {
   return (
@@ -15,9 +16,18 @@ export default function Home() {
         {/* Giriş Kartı (2 Sütun) */}
         <div className="md:col-span-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-8 rounded-3xl flex flex-col justify-between min-h-[300px]">
           <div>
-            <h1 className="text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50">
-              M. Yiğit Soyulmaz
-            </h1>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/profile.jpg"
+                alt="M. Yiğit Soyulmaz"
+                width={56}
+                height={56}
+                className="rounded-full object-cover w-14 h-14 border-2 border-zinc-200 dark:border-zinc-700"
+              />
+              <h1 className="text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50">
+                M. Yiğit Soyulmaz
+              </h1>
+            </div>
             <p className="mt-4 text-zinc-500 dark:text-zinc-400 text-lg max-w-md">
               Bilgisayar Mühendisliği öğrencisi, müzik prodüktörü ve oyun geliştirici.
               C, Python ve Godot ile dijital dünyalar inşa ediyorum.
@@ -68,19 +78,26 @@ export default function Home() {
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2309306720&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
             ></iframe>
           </div>
+
+          {/* YouTube & SoundCloud Linkleri */}
+          <div className="flex gap-3 px-2">
+            <a href="https://youtube.com/@yigidsoyulmaz?si=dnawmWKO2CFLLUnI" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors text-sm font-medium">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-red-500">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              YouTube
+            </a>
+            <a href="https://soundcloud.com/user-118460422" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors text-sm font-medium">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-orange-500">
+                <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c-.009-.06-.05-.1-.1-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.172 1.282c.013.06.045.094.104.094.057 0 .09-.037.104-.094l.21-1.282-.21-1.332c-.014-.057-.047-.094-.104-.094m1.8-1.193c-.066 0-.12.048-.12.117l-.217 2.502.217 2.456c.002.066.054.117.12.117.063 0 .114-.05.12-.117l.244-2.456-.244-2.502c-.006-.069-.057-.117-.12-.117m.862-.46c-.078 0-.143.06-.143.14l-.189 2.96.189 2.883c.002.078.065.14.143.14.074 0 .136-.062.14-.14l.213-2.882-.213-2.96c-.004-.08-.066-.14-.14-.14m.86-.197c-.09 0-.158.07-.164.157l-.163 3.157.163 3.06c.006.09.075.157.164.157.086 0 .157-.068.16-.157l.186-3.06-.186-3.157c-.003-.087-.074-.157-.16-.157m.87-.167c-.1 0-.183.08-.186.178l-.14 3.324.14 3.18c.003.1.086.178.186.178.098 0 .178-.08.183-.178l.16-3.18-.16-3.324c-.005-.1-.085-.178-.183-.178m.882-.135c-.114 0-.203.092-.207.2l-.12 3.46.12 3.3c.004.112.093.2.207.2.11 0 .2-.088.204-.2l.133-3.3-.133-3.46c-.004-.108-.094-.2-.204-.2m.88-.098c-.127 0-.223.1-.227.22l-.1 3.56.1 3.38c.004.12.1.22.227.22.122 0 .22-.1.223-.22l.113-3.38-.113-3.56c-.003-.12-.1-.22-.223-.22m.94-.025c-.137 0-.24.114-.243.248l-.08 3.58.08 3.397c.003.136.106.247.243.247.135 0 .24-.11.243-.247l.09-3.397-.09-3.58c-.003-.134-.108-.248-.243-.248m2.747-.24c-.07-.008-.143-.015-.217-.015-.135 0-.265.018-.39.05-.12-1.372-1.27-2.448-2.67-2.448-.352 0-.69.07-1.003.196C8.37 8.09 8.236 8.097 8.174 8.097c-.095 0-.144.06-.144.15v7.502c0 .092.05.164.14.178.016.002 5.88.003 5.88.003 1.352 0 2.45-1.1 2.45-2.45 0-1.342-1.07-2.43-2.39-2.462" />
+              </svg>
+              SoundCloud
+            </a>
+          </div>
         </div>
 
-        {/* Proje Kartı (1 Sütun - Kare) */}
-        <div className="md:col-span-1 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-8 rounded-3xl group cursor-pointer overflow-hidden relative flex flex-col justify-end">
-          <div className="relative z-10">
-            <Gamepad2 size={32} className="mb-4 text-emerald-500" />
-            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white leading-tight">GameJam<br />Projeleri</h3>
-          </div>
-          {/* Arka plana hafif bir efekt */}
-          <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-            <Gamepad2 size={150} className="text-zinc-900 dark:text-white" />
-          </div>
-        </div>
+        {/* GameJam Projeleri Kartı + Modal */}
+        <GameJamSection />
 
       </main>
     </div>
